@@ -11,7 +11,7 @@ function App() {
         name: "Mew",
     },
 ];
-const pokemon = pokemonList[0];
+const pokemon = pokemonList[1];
   return (
     <div>
       <PokemonCard pokemon={pokemon} />
