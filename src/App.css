@@ -1,3 +1,8 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .card {
   background-color: lightgreen;
   border-radius: 5px;
@@ -18,4 +23,14 @@
   background-color: white;
   border-radius: inherit;
   box-shadow: inherit;
+}
+
+.indexButtons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.indexButtons button {
+  width: 7rem;
+  border: 1px solid white;
 }
