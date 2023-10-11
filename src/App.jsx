@@ -1,6 +1,6 @@
 import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -34,7 +34,15 @@ const [pokemon, setPokemon] = useState(pokemonList[0]);
 
 const pokemonSwitch = (pokemon) => {
     setPokemon(pokemon);
+    pokemon.name === "pikachu" ? alert("pika pikachu !!!") : "";        
 }
+
+  useEffect(
+    () => {
+      alert("hello pokemon trainer :)");
+    },
+    []
+  )
 
 
   return (
