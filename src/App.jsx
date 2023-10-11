@@ -30,25 +30,17 @@ function App() {
       },
     ];
 
-const [pokemonIndex, setPokemonIndex] = useState(0);
+const [pokemon, setPokemon] = useState(pokemonList[0]);
 
-const pokemonIndexDown = () => {
-  if (pokemonIndex > 0) {
-    setPokemonIndex(pokemonIndex-1);
-  }
+const pokemonSwitch = (pokemon) => {
+    setPokemon(pokemon);
 }
 
-const pokemonIndexUp = () => {
-  if (pokemonIndex < pokemonList.length - 1) {
-    setPokemonIndex(pokemonIndex+1);
-  }
-}
+
   return (
     <>
-      <NavBar pokemonIndexDown={pokemonIndexDown} pokemonIndexUp={pokemonIndexUp} />
-      <div>
-        <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      </div>
+      <NavBar pokemonList={pokemonList} pokemonSwitch={pokemonSwitch} />
+      <PokemonCard pokemon={pokemon} />
     </>
   )
 }

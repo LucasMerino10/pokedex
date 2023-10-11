@@ -1,17 +1,18 @@
 import PropTypes from "prop-types";
 
-function NavBar({pokemonIndexDown, pokemonIndexUp}) {
+function NavBar({ pokemonList, pokemonSwitch }) {
     return (
-        <nav className="indexButtons">
-            <button onClick={pokemonIndexDown}>Précédent</button>
-            <button onClick={pokemonIndexUp}>Suivant</button>
+        <nav>
+        {pokemonList.map(pokemon => (
+            <button key={pokemon.name} onClick={ () => pokemonSwitch( pokemon )}>{pokemon.name}</button>
+        ))}
         </nav>
     )
 }
 
 NavBar.propTypes = {
-    pokemonIndexDown: PropTypes.func.isRequired,
-    pokemonIndexUp: PropTypes.func.isRequired
+    pokemonList: PropTypes.array,
+    pokemonSwitch: PropTypes.func
 }
 
 export default NavBar;
