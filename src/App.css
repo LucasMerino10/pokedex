@@ -1,14 +1,21 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto
+}
+
 .card {
-  background-color: lightgreen;
   border-radius: 5px;
   text-align: center;
-  text-shadow: 0 0 5px gray;
+  text-shadow: 0 0 2px white;
   font-size: 1.6rem;
   margin-top: 1rem;
   padding: 1rem;
   width: 200px;
-  box-shadow: 0 0 5px gray;
-  color: white;
+  box-shadow: 0 0 5px black;
+  color: black;
+  font-weight: 600;
 }
 
 .card-img {
@@ -18,4 +25,26 @@
   background-color: white;
   border-radius: inherit;
   box-shadow: inherit;
+}
+
+.card-bg-lightgreen {
+  background-color: lightgreen;
+}
+.card-bg-lightsalmon {
+  background-color: lightsalmon;
+}
+.card-bg-lightblue {
+  background-color: lightblue;
+}
+.card-bg-lightyellow {
+  background-color: rgb(231, 231, 113);
+}
+.card-bg-lightpurple {
+  background-color: rgb(155, 27, 155);
+}
+.card-bg-lightgrey {
+  background-color: lightgray;
+}
+.card-bg-lightbrown {
+  background-color: burlywood;
 }
