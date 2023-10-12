@@ -1,18 +1,19 @@
-import PropTypes from "prop-types";
 
-function NavBar({ pokemonList, pokemonSwitch }) {
+function NavBar({placeholder, pokemonList, setPokemonList}) {
+
+    function handleChange(e) {
+        const filterList = pokemonList.filter(pokemon => {
+            if (pokemon.name.includes(e.target.value)) {
+                return true
+            }
+        })
+    }
+
     return (
-        <nav>
-            {pokemonList.map(pokemon => (
-                <button key={pokemon.name} onClick={() => pokemonSwitch(pokemon)}>{pokemon.name}</button>
-            ))}
-        </nav>
+        <input type="text" className="searchBar" placeholder={placeholder} onChange={handleChange}/>
     )
 }
 
-NavBar.propTypes = {
-    pokemonList: PropTypes.array,
-    pokemonSwitch: PropTypes.func
-}
+
 
 export default NavBar;

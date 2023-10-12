@@ -1,6 +1,9 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 function PokemonCard({ pokemon }) {
+
+    const [image, setImage] = useState(pokemon.imgSrc)
 
     const getBgColor = (type) => {
         const typeColor = {
@@ -23,11 +26,21 @@ function PokemonCard({ pokemon }) {
         return typeColor[type];
     }
 
+    function shinySwitch() {
+        if (image === pokemon.imgSrc) {
+            setImage(pokemon.imgShiny)
+        }
+        else {
+            setImage(pokemon.imgSrc)
+        }
+    }
+
     return (
         <figure className={"card " + getBgColor(pokemon.type)}>
-            <img src={pokemon.imgSrc}
+            <img src={image}
                 className={"card-img "}
-                alt={pokemon.name}/>
+                alt={pokemon.name}
+                onClick={shinySwitch}/>
             <figcaption>{pokemon.name}</figcaption>
         </figure>
     )
@@ -37,6 +50,7 @@ PokemonCard.propTypes = {
     pokemon: PropTypes.shape({
         name: PropTypes.string.isRequired,
         imgSrc: PropTypes.string,
+        imgShiny: PropTypes.string,
         type: PropTypes.string.isRequired
     })
 }
