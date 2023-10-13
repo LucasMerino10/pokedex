@@ -7,21 +7,21 @@ function PokemonCard({ index, name, displayImage, imgSrc, imgShiny, type, shiny}
 
     const getBgColor = (type) => {
         const typeColor = {
-            Plante: "card-bg-lightgreen",
-            Insecte: "card-bg-lightgreen",
-            Normal: "card-bg-lightgrey",
-            Poison: "card-bg-lightpurple",
-            Sol: "card-bg-lightbrown",
-            Fée: "card-bg-lightpurple",
-            Combat: "card-bg-lightbrown",
-            Roche: "card-bg-lightbrown",
-            Spectre: "card-bg-lightpurple",
-            Glace: "card-bg-lightblue",
-            Dragon: "card-bg-lightgrey",
-            Feu: "card-bg-lightsalmon",
-            Eau: "card-bg-lightblue",
-            Électrik: "card-bg-lightyellow",
-            Psy: "card-bg-lightpurple"
+            Plante: "card--lightgreen",
+            Insecte: "card--lightgreen",
+            Normal: "card--lightgray",
+            Poison: "card--darkmagenta",
+            Sol: "card--burlywood",
+            Fée: "card--darkmagenta",
+            Combat: "card--burlywood",
+            Roche: "card--burlywood",
+            Spectre: "card--darkmagenta",
+            Glace: "card--lightblue",
+            Dragon: "card--lightgray",
+            Feu: "card--lightsalmon",
+            Eau: "card--lightblue",
+            Électrik: "card--khaki",
+            Psy: "card--darkmagenta"
         }
         return typeColor[type];
     }
@@ -42,9 +42,9 @@ function PokemonCard({ index, name, displayImage, imgSrc, imgShiny, type, shiny}
 
     return (
         <figure className={"card " + getBgColor(type)} >
-            <p>{"n°" + index}</p>
+            <p className="card__p">{"n°" + index}</p>
             <img src={getImage()}
-                className={"card-img "}
+                className={"card__img "}
                 alt={name}
                 // onClick={shinySwitch} 
                 />

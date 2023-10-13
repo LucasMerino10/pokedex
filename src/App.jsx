@@ -20,11 +20,11 @@ function App() {
 return (
   <>
     <SearchBar placeholder="Pokemon Filter" search={search} onChange={setSearch} shiny={shiny} setShiny={setShiny} />
-    <section className="container">
+    <main className="container">
       {visiblePokemonList.map((pokemon, index) => (
         <PokemonCard key={pokemon.name} index={index+1} name={pokemon.name} displayImage="" imgSrc={pokemon.imgSrc} imgShiny={pokemon.imgShiny} type={pokemon.type} shiny={shiny} />
       ))}
-    </section>
+    </main>
   </>
 )
 }

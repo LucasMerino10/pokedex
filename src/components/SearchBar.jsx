@@ -1,10 +1,11 @@
 import PropTypes from "prop-types"
 import Checkbox from "./Checkbox"
+import Input from "./Input"
 
 function SearchBar({ placeholder, search, onChange, shiny, setShiny }) {
 
     function handleChange(e) {
-        onChange(e.target.value)
+        onChange(e)
     }
 
     function shinyCheck(e) {
@@ -12,10 +13,10 @@ function SearchBar({ placeholder, search, onChange, shiny, setShiny }) {
     }
 
     return (
-        <nav className="filters">
-            <input type="text" value={search} onChange={(event) => handleChange(event)} className="searchBar" placeholder={placeholder} />
-            <Checkbox id="shiny" checked={shiny} onChange={shinyCheck} label="Shiny" className="checkbox" />
-        </nav>
+        <header className="filters">
+            <Input search={search} onChange={handleChange} className="filters__input" placeholder={placeholder}/>
+            <Checkbox id="shiny" checked={shiny} onChange={shinyCheck} label="Shiny" className="filtlers__checkbox" />
+        </header>
     )
 
 }

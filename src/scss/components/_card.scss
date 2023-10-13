@@ -1,0 +1,46 @@
+@import "../variables/variables.scss";
+
+.card {
+    border-radius: 5px;
+    text-align: center;
+    text-shadow: 0 0 2px white;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    padding: 0 1rem 1rem 1rem;
+    width: 135px;
+    box-shadow: 0 0 5px black;
+    color: black;
+    font-weight: 600;
+    transition: .5s;
+
+    &:hover {
+        scale: 1.2;
+        transition: all .5s;
+        /* transform-style: preserve-3d;
+        transition: transform 1.5s;
+        transform: rotateY(360deg);
+        backface-visibility: hidden; */
+    }
+
+    .card__img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0.5rem;
+        background-color: white;
+        border-radius: inherit;
+        box-shadow: inherit;
+    }
+    
+    .card__p {
+        font-size: 1rem;
+        margin: 0 0 .2rem 0;
+        text-align: left;
+    }
+
+}
+
+@each $color in $colors {
+    .card--#{$color} {
+        background-color: $color;
+    }
+}

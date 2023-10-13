@@ -1,0 +1,30 @@
+@import "../variables/variables.scss";
+
+.filters {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+
+    .filters__input {
+        background-color: $light;
+        border-style: none;
+        border-radius: 8px;
+        padding: .5rem;
+        margin-right: 1rem;
+        color: $dark;
+    }
+
+    .filters__label {
+        cursor: pointer;
+    }
+
+    .filters__checkbox {
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+}
