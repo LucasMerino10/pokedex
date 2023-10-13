@@ -8,6 +8,7 @@ import "./App.css";
 function App() {
 
   const [search, setSearch] = useState("")
+  const [shiny, setShiny] = useState(false)
 
   const visiblePokemonList = pokemonList.filter(pokemon => {
     if (search && !pokemon.name.toLowerCase().includes(search)) {
@@ -18,10 +19,10 @@ function App() {
 
 return (
   <>
-    <SearchBar placeholder="Pokemon Filter" search={search} onChange={setSearch} />
+    <SearchBar placeholder="Pokemon Filter" search={search} onChange={setSearch} shiny={shiny} setShiny={setShiny} />
     <section className="container">
-      {visiblePokemonList.map(pokemon => (
-        <PokemonCard key={pokemon.name} pokemon={pokemon} />
+      {visiblePokemonList.map((pokemon, index) => (
+        <PokemonCard key={pokemon.name} index={index+1} name={pokemon.name} displayImage="" imgSrc={pokemon.imgSrc} imgShiny={pokemon.imgShiny} type={pokemon.type} shiny={shiny} />
       ))}
     </section>
   </>

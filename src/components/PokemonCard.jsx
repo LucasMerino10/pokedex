@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+// import { useState } from "react";
 
-function PokemonCard({ pokemon }) {
+function PokemonCard({ index, name, displayImage, imgSrc, imgShiny, type, shiny}) {
 
-    const [image, setImage] = useState(pokemon.imgSrc)
+    // const [pokemonShiny, setPokemonShiny] = useState(shiny)
 
     const getBgColor = (type) => {
         const typeColor = {
@@ -26,33 +26,41 @@ function PokemonCard({ pokemon }) {
         return typeColor[type];
     }
 
-    function shinySwitch() {
-        if (image === pokemon.imgSrc) {
-            setImage(pokemon.imgShiny)
-        }
-        else {
-            setImage(pokemon.imgSrc)
-        }
+    // function shinySwitch() {
+    //     if (pokemonShiny) {
+    //         setPokemonShiny(false)
+    //     }
+    //     else {
+    //         setPokemonShiny(true)
+    //     }
+    // }
+
+    function getImage() {
+        shiny ? displayImage = imgShiny : displayImage = imgSrc
+        return displayImage
     }
 
     return (
-        <figure className={"card " + getBgColor(pokemon.type)}>
-            <img src={image}
+        <figure className={"card " + getBgColor(type)} >
+            <p>{"n°" + index}</p>
+            <img src={getImage()}
                 className={"card-img "}
-                alt={pokemon.name}
-                onClick={shinySwitch}/>
-            <figcaption>{pokemon.name}</figcaption>
+                alt={name}
+                // onClick={shinySwitch} 
+                />
+            <figcaption>{name}</figcaption>
         </figure>
     )
 }
 
 PokemonCard.propTypes = {
-    pokemon: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        imgSrc: PropTypes.string,
-        imgShiny: PropTypes.string,
-        type: PropTypes.string.isRequired
-    })
+    index: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    displayImage: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string,
+    imgShiny: PropTypes.string,
+    type: PropTypes.string.isRequired,
+    shiny: PropTypes.bool.isRequired,
 }
 
 export default PokemonCard;
