@@ -1,13 +1,18 @@
 @import "../variables/variables.scss";
 
 .filters {
+    position: fixed;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem 0;
+    margin: 0;
+    padding: 1rem;
+    background-color: #242424;
+    box-shadow: 0 0 3px $dark;
+    z-index: 1;
 
-    .filters__input {
+    &__input {
         background-color: $light;
         border-style: none;
         border-radius: 8px;
@@ -16,11 +21,14 @@
         color: $dark;
     }
 
-    .filters__label {
-        cursor: pointer;
+    &__label {
+        
+        &:hover {
+            cursor: pointer;
+        }
     }
 
-    .filters__checkbox {
+    &__checkbox {
 
         &:hover {
             cursor: pointer;

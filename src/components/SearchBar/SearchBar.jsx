@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
-import Checkbox from "./Checkbox"
-import Input from "./Input"
+import Checkbox from "../Checkbox/Checkbox"
+import Input from "../Input/Input"
 
 function SearchBar({ placeholder, search, onChange, shiny, setShiny }) {
 
@@ -15,7 +15,7 @@ function SearchBar({ placeholder, search, onChange, shiny, setShiny }) {
     return (
         <header className="filters">
             <Input search={search} onChange={handleChange} className="filters__input" placeholder={placeholder}/>
-            <Checkbox id="shiny" checked={shiny} onChange={shinyCheck} label="Shiny" className="filtlers__checkbox" />
+            <Checkbox id="shiny" checked={shiny} onChange={shinyCheck} label="Shiny" className="filters__checkbox" />
         </header>
     )
 

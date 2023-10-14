@@ -9,7 +9,7 @@ function Checkbox({ checked, onChange, label, id, className }) {
                 checked={checked}
                 label={label}
                 onChange={(event) => onChange(event.target.checked)} />
-            <label htmlFor={id}>{label}</label>
+            <label htmlFor={id} className="filters__label">{label}</label>
         </>
     )
 }

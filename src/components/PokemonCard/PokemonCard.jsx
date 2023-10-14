@@ -44,7 +44,7 @@ function PokemonCard({ index, name, displayImage, imgSrc, imgShiny, type, shiny}
         <figure className={"card " + getBgColor(type)} >
             <p className="card__p">{"n°" + index}</p>
             <img src={getImage()}
-                className={"card__img "}
+                className={shiny ? "card__img--shiny" : "card__img"}
                 alt={name}
                 // onClick={shinySwitch} 
                 />
