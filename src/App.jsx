@@ -1,7 +1,7 @@
 import PokemonCard from "./components/PokemonCard/PokemonCard";
 import SearchBar from "./components/SearchBar/SearchBar";
 import pokemonList from "./components/pokemonList";
-import ScrollButton from "./components/scrollButton/ScrollButton";
+import ScrollButton from "./components/ScrollButton/ScrollButton";
 import { useState } from "react";
 import "./App.css";
 
