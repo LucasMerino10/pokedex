@@ -152,4 +152,8 @@ const pokemonList = [
     { name: "Mew", imgSrc: "../src/assets/pokemon-regular/151.png", imgShiny: "../src/assets/pokemon-shiny/151.png", type: "Psy" },
 ];
 
+pokemonList.forEach((pokemon, index)=> {
+    pokemon.numero = index + 1;
+});
+
 export default pokemonList;
