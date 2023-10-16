@@ -11,8 +11,16 @@ function App() {
   const [search, setSearch] = useState("")
   const [shiny, setShiny] = useState(false)
 
+  function removeAccents(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
   const visiblePokemonList = pokemonList.filter(pokemon => {
-    if (search && !pokemon.name.toLowerCase().includes(search)) {
+    if (search) {
+      if ((!isNaN(search) && pokemon.numero.toString() === search) ||
+        (search && removeAccents(pokemon.name.toLowerCase()).includes(removeAccents(search.toLowerCase())))) {
+        return true
+      }
       return false
     }
     return true
@@ -26,7 +34,7 @@ function App() {
     <>
       <SearchBar placeholder="Pokemon Filter" search={search} onChange={setSearch} shiny={shiny} setShiny={setShiny} />
       <main className="container">
-        <ScrollButton onClick={handleClick}/>
+        <ScrollButton onClick={handleClick} />
         {/* <button className="scrollButton" onClick={handleClick} ></button> */}
 
         {visiblePokemonList.map((pokemon, index) => (
