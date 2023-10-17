@@ -7,8 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-../src/assets/pokemon-regular
-../src/assets/pokemon-shiny
+src/assets/pokemon-regular
+src/assets/pokemon-shiny
 node_modules
 dist
 dist-ssr
